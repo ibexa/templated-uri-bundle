@@ -1,7 +1,7 @@
 Hautelook Templated URI Bundle
 ==============================
 
-Symfony Bundle for the [https://github.com/hautelook/TemplatedUriRouter](https://github.com/hautelook/TemplatedUriRouter)
+Fork of `hautelook/templated-uri-bundle`. Symfony Bundle for the [https://github.com/hautelook/TemplatedUriRouter](https://github.com/hautelook/TemplatedUriRouter)
 library. 
 `hautelook/TemplatedUriRouter` provides a [RFC-6570](https://tools.ietf.org/html/rfc6570) compatible 
 Symfony router and URL Generator.
@@ -14,7 +14,7 @@ Symfony router and URL Generator.
 Assuming you have installed [composer](https://getcomposer.org/), run the following command:
 
 ```bash
-$ composer require hautelook/templated-uri-bundle
+$ composer require ibexa/templated-uri-bundle
 ```
 
 Now add the bundle to your Kernel:
