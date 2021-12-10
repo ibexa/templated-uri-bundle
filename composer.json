@@ -15,7 +15,7 @@
         "hautelook/templated-uri-bundle": "self.version"
     },
     "require": {
-        "php": "^5.4|^7.0",
+        "php": "^5.4|^7.0|^8.0",
         "symfony/framework-bundle": "^2.8|^3.0|^4.0|^5.0",
         "ibexa/templated-uri-router": "^2.0|^3.0"
     },
