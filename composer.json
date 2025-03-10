@@ -16,7 +16,7 @@
     },
     "require": {
         "php": ">=8.3",
-        "symfony/framework-bundle": "^6.0 || ^7.0",
+        "symfony/framework-bundle": "^7.0",
         "ibexa/templated-uri-router": "^4.0.x-dev"
     },
     "require-dev": {
