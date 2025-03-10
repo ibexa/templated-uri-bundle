@@ -20,7 +20,7 @@
         "ibexa/templated-uri-router": "^4.0.x-dev"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.6"
+        "phpunit/phpunit": "^10.5"
     },
     "autoload": {
         "psr-4": {
