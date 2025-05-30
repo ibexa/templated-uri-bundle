@@ -2,13 +2,16 @@
 
 namespace Hautelook\TemplatedUriBundle\DependencyInjection\CompilerPass;
 
+use ReflectionClass;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\Kernel;
+use Hautelook\TemplatedUriRouter\Routing\Generator\Rfc6570Generator;
+use Symfony\Component\Routing\Generator\CompiledUrlGenerator;
+use Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper;
 
 class TemplatedRouterPass implements CompilerPassInterface
 {
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         $router = $container->findDefinition('router.default');
         $resourceOptions = $router->getArgument(2);
@@ -23,8 +26,8 @@ class TemplatedRouterPass implements CompilerPassInterface
         }
 
         $legacyGenerator = !is_a(
-            'Hautelook\TemplatedUriRouter\Routing\Generator\Rfc6570Generator',
-            'Symfony\Component\Routing\Generator\CompiledUrlGenerator',
+            Rfc6570Generator::class,
+            CompiledUrlGenerator::class,
             true
         );
 
@@ -35,12 +38,12 @@ class TemplatedRouterPass implements CompilerPassInterface
             $templatedResourceOptions['matcher_base_class'] = 'Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher';
             $templatedResourceOptions['matcher_cache_class'] = '%kernel.name%%kernel.environment%RFC6570UrlMatcher';
         } else {
-            $templatedResourceOptions['generator_dumper_class'] = 'Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper';
+            $templatedResourceOptions['generator_dumper_class'] = CompiledUrlGeneratorDumper::class;
         }
 
         $templatedRouter->replaceArgument(2, $templatedResourceOptions);
 
-        $ref = new \ReflectionClass($templatedRouter->getClass());
+        $ref = new ReflectionClass($templatedRouter->getClass());
         $cArgs = $ref->getConstructor()->getParameters();
         if (count($cArgs) < 5) { // Symfony < 4
             $args = $templatedRouter->getArguments();
