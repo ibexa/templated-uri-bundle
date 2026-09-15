@@ -1,7 +1,15 @@
 {
     "name": "ibexa/templated-uri-bundle",
     "description": "Fork of hautelook/templated-uri-bundle. Symfony Bundle that provides a RFC-6570 compatible router and URL Generator.",
-    "keywords": ["Symfony", "URI", "URL", "RFC 6570", "JSON", "XML", "Hateoas"],
+    "keywords": [
+        "Symfony",
+        "URI",
+        "URL",
+        "RFC 6570",
+        "JSON",
+        "XML",
+        "Hateoas"
+    ],
     "type": "symfony-bundle",
     "license": "MIT",
     "homepage": "http://www.hautelooktech.com/",
@@ -16,11 +24,12 @@
     },
     "require": {
         "php": ">=8.3",
-        "symfony/framework-bundle": "^7.0",
-        "ibexa/templated-uri-router": "^5.0.x-dev"
+        "symfony/framework-bundle": "^7.4 || ^8.0",
+        "ibexa/templated-uri-router": "dev-symfony-8 as 5.1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.5"
+        "phpunit/phpunit": "^10.5 || ^11.5",
+        "symfony/phpunit-bridge": "^7.4 || ^8.0"
     },
     "autoload": {
         "psr-4": {
@@ -29,7 +38,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "4.0.x-dev"
+            "dev-main": "5.0.x-dev"
         }
     }
 }
