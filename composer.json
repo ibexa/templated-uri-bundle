@@ -28,7 +28,7 @@
     "target-dir": "Hautelook/TemplatedUriBundle",
     "extra": {
         "branch-alias": {
-            "dev-master": "3.0-dev"
+            "dev-main": "4.6.x-dev"
         }
     }
 }
