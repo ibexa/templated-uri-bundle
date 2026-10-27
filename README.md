@@ -6,6 +6,12 @@ library.
 `hautelook/TemplatedUriRouter` provides a [RFC-6570](https://tools.ietf.org/html/rfc6570) compatible 
 Symfony router and URL Generator.
 
+Branches:
+
+- `3.3` : Stable branch for Ibexa DXP 4.6.x
+- `4.0` : Stable branch for Ibexa DXP 5.0.x
+- `main` : Obsolete stable branch for Ibexa DXP 6.0.x ( 6.0.0 will drop dependency to this bundle )
+
 [![Build Status](https://secure.travis-ci.org/hautelook/TemplatedUriBundle.png?branch=master)](https://travis-ci.org/hautelook/TemplatedUriBundle)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/cf31d6be-a1b8-41b5-a718-9f35660c321b/mini.png)](https://insight.sensiolabs.com/projects/cf31d6be-a1b8-41b5-a718-9f35660c321b)
 
